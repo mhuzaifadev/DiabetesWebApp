@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html">
+    <head>
+        <meta charset = "utf-8">
+        <title>Diabetes Detection | PIMA Indians</title>
+        <link rel="stylesheet" href = "static/app_assets/css/style.css">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class = "container">
+            <div class = "text">
+                Diabetes Detection
+            </div>
+
+            <form action = "" method = "post">
+                <div class = "form-row">
+                    <label for ="model">
+                        Choose Machine Learning Model
+                    </label>
+                    <div class = "input-data">
+                        <select name = "model" id ="model">
+                            <option value = "KNN">K - Nearest Neighbors</option>
+                            <option value = "DecisionTreeClassifier">Decision Tree</option>
+                            <option value = "LogisiticRegression">Logistic Regression</option>
+                            <option value = "Naive Bayes">Naive Bayes</option>
+                            <option value = "Random Forest">Random Forest</option>
+                            <option value = "Support Vector Classifier">Support Vector Machine</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="input-data">
+                       <input type="text" name = "pregnancies" required>
+                       <div class="underline"></div>
+                       <label for="pregnancies">Number of times pregnant</label>
+                    </div>
+                    <div class="input-data">
+                       <input type="text" name = "glucose" required>
+                       <div class="underline"></div>
+                       <label for="glucose">Plasma glucose concentration</label>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="input-data">
+                       <input type="text" name = "bloodpressure" required>
+                       <div class="underline"></div>
+                       <label for="bloodpressure">Blood Pressure (mm/Hg)</label>
+                    </div>
+                    <div class="input-data">
+                       <input type="text" name = "skinthikness" required>
+                       <div class="underline"></div>
+                       <label for="skinthikness">Triceps skin fold thickness (mm)</label>
+                    </div>
+                </div>
+        
+                <div class="form-row">
+                    <div class="input-data">
+                       <input type="text" name = "insulin" required>
+                       <div class="underline"></div>
+                       <label for="insulin">2-Hour serum insulin (mu U/ml)</label>
+                    </div>
+                    <div class="input-data">
+                       <input type="text" name = "bmi" required>
+                       <div class="underline"></div>
+                       <label for="bmi">Body Mass Index</label>
+                    </div>
+                </div>
+        
+                <div class="form-row">
+                    <div class="input-data">
+                       <input type="text" name = "dpfunc" required>
+                       <div class="underline"></div>
+                       <label for="dpfunc">Diabetes pedigree function</label>
+                    </div>
+                    <div class="input-data">
+                       <input type="text" name = "age" required>
+                       <div class="underline"></div>
+                       <label for="age">Age (Years)</label>
+                    </div>
+                </div>
+
+                <div class = "form-row submit-btn">
+                    <div class = "input-data">
+                        <div class = "inner"></div>
+                        <input type = "submit" value = "Predict" id = "submit">
+                    </div>
+                    <bold>
+                        {% for item in data %}
+                            {{item.msg}}
+                        {% endfor %}
+                    </bold>
+                </div>
+            </form>
+
+        </div>
+    </body>
+</html>
